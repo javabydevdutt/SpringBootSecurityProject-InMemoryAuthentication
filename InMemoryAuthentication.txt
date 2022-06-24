@@ -1,0 +1,20 @@
+*) InMemory (RAM) AuthenticationManager:- Dev/Test
+
+     ------------------------RAM-------------------------
+     |   username     |  password     |   authorities   |
+     ----------------------------------------------------
+     |    sam         |    sam        |   ADMIN         |
+     |    syed        |    syed       |   EMPLOYEE      |
+     |    jai         |    jai        |   STUDENT       |
+     ----------------------------------------------------
+
+*) Ex: HomeController (class)
+ -------------------------------------------------------------------
+    URL                      UI                       Access Details
+ -------------------------------------------------------------------
+   /home                  HomePage.html       (permitAll)every one can access
+   /welcome               WelcomePage.html    (authenticated) only login users
+						[No Role required]
+   /admin                 AdminPage.html      (hasAuthority[ADMIN]) login + role-ADMIN
+   /emp                   EmployeePage.html   (hasAuthority[EMPLOYEE]) login + role-EMPLOYEE
+   /std                   StudentPage.html    (hasAuthority[STUDENT]) login + role-STUDENT     
